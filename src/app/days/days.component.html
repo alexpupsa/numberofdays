@@ -1,0 +1,28 @@
+<div class="container-fluid margins-container">
+    <div class="row center-text">
+        <div class="col-4 offset-4">
+            <p-calendar [(ngModel)]="date" [style]="{'width':'100%'}"
+                [inputStyle]="{'width':'100%', 'text-align':'center', 'color':'green', 'font-weight':'bold'}"
+                (onSelect)="onSelectDate()" dateFormat="dd-MM-yy" [locale]="calendarSettings" [monthNavigator]="true"
+                [yearNavigator]="true" yearRange="1920:2020" [placeholder]="'Enter birthdate'">
+            </p-calendar>
+        </div>
+    </div>
+    <div *ngIf="days || days === 0" class="row margin-top-50 center-text">
+        <div class="col-md-4 offset-md-4">
+            <h4 class="title-text">Today, you are </h4>
+            <h1 class="days-text">{{days | number}} days</h1>
+        </div>
+    </div>
+    <div *ngIf="days || days === 0" class="row margin-top-30 center-text">
+        <div class="col-md-4 offset-md-4">
+            <h2 class="title-text">Next important dates:</h2>
+        </div>
+    </div>
+    <div *ngFor="let milestone of milestones" class="row margin-top-30 center-text">
+        <div class="col-md-4 offset-md-4">
+            <h3 class="days-text">{{milestone.days | number}} days</h3>
+            <h3 class="date-text">{{milestone.date | date: 'dd-MMM-yyyy'}}</h3>
+        </div>
+    </div>
+</div>
