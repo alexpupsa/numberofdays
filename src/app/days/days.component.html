@@ -22,7 +22,7 @@
     <div *ngFor="let milestone of milestones" class="row margin-top-30 center-text">
         <div class="col-md-4 offset-md-4">
             <h3 class="days-text">{{milestone.days | number}} days</h3>
-            <h3 class="date-text">{{milestone.date | date: 'dd-MMM-yyyy'}}</h3>
+            <h4 class="date-text">{{milestone.date | date: 'dd-MMM-yyyy'}}</h4>
         </div>
     </div>
 </div>
