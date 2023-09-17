@@ -10,11 +10,11 @@ export class DaysComponent implements OnInit {
 
   calendarSettings: any;
 
-  date: Date;
+  date!: Date;
 
-  days: number;
+  days!: number;
 
-  milestones: Milestone[];
+  milestones!: Milestone[];
 
   constructor() { }
 
